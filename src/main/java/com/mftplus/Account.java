@@ -20,5 +20,11 @@ public abstract class Account {
 
     public abstract void deposit(double amount);
     public abstract void withdraw(double amount);
+    public void setBalance(double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("موجودی حساب نمی‌تواند منفی باشد.");
+        }
+        this.balance = balance;
+    }
 
 }
